@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Calculate grades","Grades","home")
+<h2>myForm</h2>
+<form action="/home/Index" method="post">
+    <label>Initial Investement:</label><br />
+    <input type="text" name="amount" /><br />
+    <label>Rate in %:</label><br />
+    <input type="text" name="rate" /><br />
+    <label>Number of years:</label><br />
+    <input type="text" name="years" /><br /><br />
+    <input type="submit" value="Calculate" /><br />
+</form>
+<br>
+@if (ViewBag.total != null) {
+    <p>You will get @ViewBag.total</p>
+}
+

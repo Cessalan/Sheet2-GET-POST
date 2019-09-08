@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Grades";
+}
+
+<h2>Grades</h2>
+<h2>Enter your three grades:</h2>
+<form action="/home/Grades" method="post">
+    <label>Grade 1:</label>
+    <input type="text" name="grade1" /><br />
+    <label>Grade 2:</label>
+    <input type="text" name="grade2" /><br />
+    <label>Grade 3:</label>
+    <input type="text" name="grade3" /><br />
+    <input type="submit" value="Get Letter Grade" />
+</form>
+@if (ViewBag.grade != null)
+{
+    String g = ViewBag.grade;
+    if (g == "A" || g == "B")
+    {
+        <div>Your grade is:<p style="color:green"><b>@g</b></p></div>
+    }
+    else if (g == "C" || g == "D")
+    {
+        <div>Your grade is:<p style="color:yellow"><b>@g</b></p></div>
+    }
+    else
+    {
+        <div>Your grade is:<p style="color:red"><b>@g</b></p></div>
+    }
+}
+
+
